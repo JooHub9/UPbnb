@@ -1,0 +1,29 @@
+.nav_bar {
+  background-color: rgba(255, 255, 255, 0.65);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #004F63;
+  padding-top: 30px;
+  margin:0;
+
+  .icones {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: auto;
+    color:#004F63;
+    position:relative;
+
+    .logo_menu{
+      position: absolute;
+      bottom: -5px;
+    }
+  }
+}
