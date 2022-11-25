@@ -9,12 +9,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 //Importei isto para os SVG files
 import { HttpClientModule } from '@angular/common/http';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { CasaComponent } from './casa/casa.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavegacaoComponent,
+    CasaComponent,
   ],
   imports: [
     BrowserModule,

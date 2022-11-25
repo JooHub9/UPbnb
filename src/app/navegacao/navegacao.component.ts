@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {faMagnifyingGlass, faHeart} from "@fortawesome/free-solid-svg-icons";
+import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faHeart} from "@fortawesome/free-regular-svg-icons";
 
 
 @Component({
