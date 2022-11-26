@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {faStar} from "@fortawesome/free-solid-svg-icons";
+
 
 @Component({
   selector: 'app-casa',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CasaComponent implements OnInit {
 
-  constructor() { }
+  @Input() id! : number;
+  @Input() title?: string;
+  @Input() country!: string;
+  @Input() city!: string;
+  @Input() rating?: number;
+  @Input() price?: number;
+  @Input() host_type!: string;
+  @Input() featured_photo?: string
+
+  faStar=faStar
+
+
+  constructor( ) { }
 
   ngOnInit(): void {
+
   }
 
 }

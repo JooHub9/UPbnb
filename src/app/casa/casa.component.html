@@ -1,1 +1,15 @@
-<p>casa works!</p>
+<div class="container">
+  <div class="coluna">
+      <img class="imagem" src="{{featured_photo}}" alt="foto casa">
+      <div class="info_casa">
+        <h4 class="localizacao">{{city}}, {{country}}</h4>
+        <div class="rating">
+          <fa-icon [icon]="faStar"></fa-icon>
+          {{rating}}
+        </div>
+      </div>
+      <div class="anfitriao">Anfitrião {{host_type}}</div>
+      <div class="preco">{{ price}} noite</div>
+    </div>
+  </div>
+
