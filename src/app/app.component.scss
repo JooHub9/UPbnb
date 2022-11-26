@@ -1,5 +1,11 @@
 .wrapper {
   //padding: 25px;
-  padding-bottom: 56px;
+  padding-bottom: 60px;
   margin: auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 800px;
 }
