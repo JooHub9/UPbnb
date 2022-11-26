@@ -1,0 +1,13 @@
+<div>
+<app-casa
+*ngFor="let casa of this.lista_casas"
+[id] = "casa.id"
+[title] = "casa.title"
+[country] = "casa.country"
+[city] = "casa.city"
+[rating] = "casa.rating"
+[price] = "casa.price"
+[host_type] = "casa.host_type"
+[featured_photo] = "casa.featured_photo">
+</app-casa>
+</div>
