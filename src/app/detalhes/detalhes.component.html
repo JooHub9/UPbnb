@@ -1,0 +1,16 @@
+<h1 *ngIf="!detalhes">A carregar...</h1>
+<div *ngIf="detalhes">
+  <div class="container_casa">
+    <h1 class="titulo">{{detalhes.title}}</h1>
+    <div class="info_casa">
+        <fa-icon [icon]="faStar"></fa-icon>
+        {{detalhes.rating}} <p class="localizacao">{{detalhes.city}}, {{detalhes.country}}</p>
+      </div>
+      <img class="imagem_casa" src="{{detalhes.featured_photo}}" alt="foto_casa">
+    </div>
+    <div class="preco">{{detalhes.price}} noite</div>
+    <div class="descricao"> {{detalhes.description}}
+    </div>
+  </div>
+<div class="regras"></div>
+
