@@ -9,11 +9,13 @@ interface Catalogo {
 
 interface Casa {
   id : number,
-  title: string,
+  title?: string,
   country: string,
   city: string,
   rating: number,
   price: number,
-  host_type: string,
+  host_type?: string,
   featured_photo: string
+  description?: string
 }
+

@@ -11,6 +11,12 @@ import { CasaComponent } from './casa/casa.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import {RouterLink} from "@angular/router";
 import {CommonModule} from "@angular/common";
+import { DetalhesComponent } from './detalhes/detalhes.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { FavoritosComponent } from './favoritos/favoritos.component';
+
+
+
 
 
 
@@ -20,6 +26,10 @@ import {CommonModule} from "@angular/common";
     NavegacaoComponent,
     CasaComponent,
     CatalogoComponent,
+    DetalhesComponent,
+    PerfilComponent,
+    FavoritosComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -28,7 +38,6 @@ import {CommonModule} from "@angular/common";
     HttpClientModule,
     RouterLink,
     CommonModule,
-
    ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-pt' }],
   bootstrap: [AppComponent]

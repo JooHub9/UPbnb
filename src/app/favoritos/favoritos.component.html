@@ -1,0 +1,23 @@
+<h1> Favoritos</h1>
+<div class="container">
+  <div class="coluna" *ngFor="let casa of lista_favoritos">
+    <img [src]="casa.featured_photo">
+  </div>
+</div>
+
+
+
+
+
+<!--<app-casa
+  *ngFor="let casa of this.lista_favoritas"
+  [id]="casa.id"
+  [title]="casa.title"
+  [country]="casa.country"
+  [city]="casa.city"
+  [rating]="casa.rating"
+  [price]="casa.price"
+  [host_type]="casa.host_type"
+  [featured_photo]="casa.featured_photo">
+</app-casa>-->
+

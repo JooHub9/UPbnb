@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AlojamentosLuxoService} from "../alojamentos-luxo.service";
-
+import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-catalogo',
@@ -10,9 +11,12 @@ import {AlojamentosLuxoService} from "../alojamentos-luxo.service";
 export class CatalogoComponent implements OnInit {
   catalogo = <Catalogo>{}
   lista_casas: Casa[] =[]
+  item : string = ""
 
+faMagnifyingGlass =faMagnifyingGlass
 
-  constructor(private alojamentosLuxoService: AlojamentosLuxoService) {
+  constructor(public alojamentosLuxoService: AlojamentosLuxoService, public route:ActivatedRoute) {
+    this.item = route.snapshot.params["item"]
   }
 
   ngOnInit(): void {
