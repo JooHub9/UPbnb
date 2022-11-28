@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {faStar} from "@fortawesome/free-solid-svg-icons";
+import {AlojamentosLuxoService} from "../alojamentos-luxo.service";
 
 
 @Component({
@@ -15,13 +16,14 @@ export class CasaComponent implements OnInit {
   @Input() city!: string;
   @Input() rating?: number;
   @Input() price?: number;
-  @Input() host_type!: string;
+  @Input() host_type?: string;
   @Input() featured_photo?: string
 
   faStar=faStar
 
 
-  constructor( ) { }
+
+  constructor(public alojamentosLuxoService: AlojamentosLuxoService) { }
 
   ngOnInit(): void {
 

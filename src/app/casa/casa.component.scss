@@ -1,24 +1,46 @@
 .container {
   padding-bottom: 30px;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  margin:10px 5px;
 
-  img {
-    width: 300px;
-    border-radius: 10px;
-  }
 
-  .info_casa {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 25px;
+      .imagens {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
 
-    fa-icon{
-      padding-right: 5px;
+
+        .imagem_casa {
+          border-radius: 10px;
+          position: relative;
+          max-height: 170px;
+
+        }
+
+        .fav {
+          width: 30px;
+          position: absolute;
+          padding-top: 10px;
+          padding-right: 10px;
+        }
+      }
+
+      .info_casa {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 25px;
+        cursor: pointer;
+
+        fa-icon {
+          padding-right: 5px;
+        }
+      }
+
+      .anfitriao {
+        height: 25px;
+        color: grey;
+      }
     }
-  }
-  .anfitriao{
-    height: 25px;
-    color: grey;
-  }
-}
