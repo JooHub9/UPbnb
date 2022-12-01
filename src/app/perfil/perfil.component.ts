@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AlojamentosLuxoService} from "../alojamentos-luxo.service";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  reservas_passadas: Casa[] = []
+  reservas_atuais: Casa[] = []
+
+  faStar=faStar
+
+  constructor(public alojamentosLuxoService: AlojamentosLuxoService) {
+  }
 
   ngOnInit(): void {
+    this.alojamentosLuxoService.getReservasAtuais().subscribe((atuais: any) => {
+      this.reservas_atuais = atuais.data;
+    })
+    this.alojamentosLuxoService.getReservasPassadas().subscribe((passadas: any) => {
+      this.reservas_passadas = passadas.data;
+    })
   }
 
 }
