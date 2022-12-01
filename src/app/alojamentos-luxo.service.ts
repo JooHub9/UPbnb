@@ -11,24 +11,45 @@ export class AlojamentosLuxoService {
   constructor(private http: HttpClient) {
   }
 
-  getCasas() {
-    return this.http.get(API_BASE + "/casas");
-  }
+  getCasas(page?: number) {
+    let url = API_BASE + "/casas"
+    if (page) {
+      url = url + "?page=" + page
+    }
+      return this.http.get(url);
+    }
 
-  getDetalhes(id : number) {
+  getDetalhes(id: number) {
     return this.http.get<Casa>(API_BASE + "/casas/" + id);
   }
 
-  getPesquisa(item:string) {
+  getPesquisa(item: string) {
     return this.http.get(API_BASE + "/casas/?search=" + item);
   }
 
+  getReservasAtuais() {
+    return this.http.get(API_BASE + "/casas/current");
+  }
+
+  getReservasPassadas() {
+    return this.http.get(API_BASE + "/casas/past");
+  }
+
+  getAnfitriao(id: number) {
+    return this.http.get(API_BASE + "/casas/" + id + "/host")
+  }
+
+  getGaleria(id: number) {
+    return this.http.get(API_BASE + "/casas/" + id + "/photos")
+
+  }
+
   getFavoritas() {
-    return this.http.get(API_BASE + "/casas/?ids=" + this.ids);
+    return this.http.get(API_BASE + "/casas/?ids=" + this.favoritos.join(","));
   }
 
   favoritos: number[] = JSON.parse(localStorage.getItem("favoritos") || "[]");
-  ids: string = this.favoritos.join(",")
+
 
   isFavorite(id: number) {
     return this.favoritos.includes(id);

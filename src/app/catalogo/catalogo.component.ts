@@ -10,13 +10,24 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class CatalogoComponent implements OnInit {
   catalogo = <Catalogo>{}
-  lista_casas: Casa[] =[]
-  item : string = ""
+  lista_casas: Casa[] = []
+  pesquisar: string[] = []
+  item: string = ""
+  page = 1
 
-faMagnifyingGlass =faMagnifyingGlass
 
-  constructor(public alojamentosLuxoService: AlojamentosLuxoService, public route:ActivatedRoute) {
-    this.item = route.snapshot.params["item"]
+  getPesquisar(e: any) {
+    const item = e.target.value;
+    return this.pesquisar.push(item)
+  }
+
+  faMagnifyingGlass = faMagnifyingGlass
+
+  constructor(public alojamentosLuxoService: AlojamentosLuxoService, public route: ActivatedRoute) {
+    this.alojamentosLuxoService.getPesquisa(this.item).subscribe((pesquisa: any) => {
+      this.item = pesquisa
+
+    })
   }
 
   ngOnInit(): void {
@@ -27,4 +38,11 @@ faMagnifyingGlass =faMagnifyingGlass
 
   }
 
+  maisResultados(): void {
+    this.page++
+    this.alojamentosLuxoService.getCasas(this.page).subscribe((casas) => {
+      let resultados = <Catalogo>casas;
+      this.lista_casas = [...this.lista_casas, ...resultados.data]
+    })
+  }
 }

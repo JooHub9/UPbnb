@@ -1,5 +1,5 @@
 <div class="barra_pesquisa">
-  <input class="pesquisa" placeholder="Procurar"(change)="alojamentosLuxoService.getPesquisa(item)">
+  <input class="pesquisa" placeholder="Procurar" (change)="getPesquisar($event)">
   <fa-icon [icon]="faMagnifyingGlass" class="fa-lg" style="color:lightgray"></fa-icon>
 </div>
 <div class="col-6">
@@ -13,6 +13,7 @@
     [price]="casa.price"
     [host_type]="casa.host_type"
     [featured_photo]="casa.featured_photo">
-  </app-casa>
-</div>
-<a>Mais Resultados</a>
+  </app-casa></div>
+<p (click)="maisResultados()">mais resultados</p>
+
+

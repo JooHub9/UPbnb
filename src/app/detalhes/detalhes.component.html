@@ -1,7 +1,7 @@
 <h1 *ngIf="!detalhes">A carregar...</h1>
 <div *ngIf="detalhes">
   <div class="container_casa">
-    <h1 class="titulo">{{detalhes.title}}</h1>
+    <h1 class="titulo">{{detalhes.title | titlecase}}</h1>
     <div class="info_casa">
         <fa-icon [icon]="faStar"></fa-icon>
         {{detalhes.rating}} <p class="localizacao">{{detalhes.city}}, {{detalhes.country}}</p>
@@ -14,3 +14,12 @@
   </div>
 <div class="regras"></div>
 
+<app-anfitriao
+  [name]="anfitriao.name"
+  [photo]="anfitriao.photo"
+  [type]="anfitriao.type"
+  [rating]="anfitriao.rating">
+</app-anfitriao>
+<!--<app-galeria *ngFor="let src this galeria"
+ [src]="galeria.photos">
+</app-galeria>-->

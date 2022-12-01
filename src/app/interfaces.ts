@@ -17,5 +17,16 @@ interface Casa {
   host_type?: string,
   featured_photo: string
   description?: string
+  time?: string
 }
 
+interface Anfitriao {
+  name: string,
+  photo: string,
+  type: string,
+  rating: number
+}
+
+interface Galeria {
+  photos: string[]
+}

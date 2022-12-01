@@ -14,6 +14,12 @@ import {CommonModule} from "@angular/common";
 import { DetalhesComponent } from './detalhes/detalhes.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
+import { ImagemComponent } from './imagem/imagem.component';
+import { RegrasComponent } from './regras/regras.component';
+import { AnfitriaoComponent } from './anfitriao/anfitriao.component';
+import { GaleriaComponent } from './galeria/galeria.component';
+
+
 
 
 
@@ -29,6 +35,11 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     DetalhesComponent,
     PerfilComponent,
     FavoritosComponent,
+    ImagemComponent,
+    RegrasComponent,
+    AnfitriaoComponent,
+    GaleriaComponent,
+
 
   ],
   imports: [
@@ -38,6 +49,7 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
     HttpClientModule,
     RouterLink,
     CommonModule,
+
    ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-pt' }],
   bootstrap: [AppComponent]
