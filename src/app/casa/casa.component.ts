@@ -17,7 +17,8 @@ export class CasaComponent implements OnInit {
   @Input() rating?: number;
   @Input() price?: number;
   @Input() host_type?: string;
-  @Input() featured_photo?: string
+  @Input() featured_photo!: string
+  @Input()time?: string
 
   faStar=faStar
 

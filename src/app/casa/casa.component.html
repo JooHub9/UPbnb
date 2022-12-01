@@ -1,9 +1,8 @@
 <div class="container">
-    <div class="imagens" (click)="alojamentosLuxoService.toggleFavorito(id)">
-    <img class="imagem_casa" src="{{featured_photo}}" alt="foto casa">
-    <img class="fav"*ngIf="alojamentosLuxoService.isFavorite(id)" src="assets/heart_full.svg" alt="icone favoritos">
-      <img class="fav"*ngIf="!alojamentosLuxoService.isFavorite(id)" src="assets/heart_open.svg" alt="icone favoritos">
-    </div>
+  <app-imagem
+    [featured_photo]="featured_photo"
+    [id]="id"
+  ></app-imagem>
     <div class="info_casa" [routerLink]="['/detalhes',id]">
       <h4 class="localizacao">{{city}}, {{country}}</h4>
       <div class="rating">
@@ -11,7 +10,9 @@
         {{rating}}
       </div>
     </div>
-    <div class="anfitriao">Anfitrião {{host_type}}</div>
+  <div class="anfitriao" *ngIf="host_type">Anfitrião {{host_type}}</div>
+  <div class="data" *ngIf="time">{{time}}</div>
   <div class="preco"><strong>{{ price}}€</strong> noite</div>
+
 </div>
 

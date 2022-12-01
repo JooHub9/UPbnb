@@ -1,31 +1,8 @@
 .container {
-  padding-bottom: 30px;
-  height: auto;
+
   display: flex;
   flex-direction: column;
-  margin:10px 5px;
-
-
-      .imagens {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-
-        .imagem_casa {
-          border-radius: 10px;
-          position: relative;
-          max-height: 170px;
-
-        }
-
-        .fav {
-          width: 30px;
-          position: absolute;
-          padding-top: 10px;
-          padding-right: 10px;
-        }
-      }
+  padding:15px 5px;
 
       .info_casa {
         display: flex;
@@ -34,8 +11,15 @@
         height: 25px;
         cursor: pointer;
 
+     .localizacao{
+       overflow: hidden;
+       white-space: nowrap;
+       text-overflow: ellipsis;
+     }
+
         fa-icon {
           padding-right: 5px;
+
         }
       }
 
