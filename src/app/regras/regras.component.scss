@@ -1,0 +1,49 @@
+.icones {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+
+  div:empty {
+    display: none
+  }
+
+  .permitidos {
+    display: flex;
+  }
+
+  .nao_permitidos {
+    display: flex;
+  }
+
+  .icon {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .allow {
+      background: #004F63;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .not_allow {
+      background: lightgrey;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+}

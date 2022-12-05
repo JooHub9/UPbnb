@@ -1,19 +1,13 @@
 <div class="nav_bar">
   <div class="icones">
-    <div class="icon" id="search">
-      <a routerLink="catalogo" routerLinkActive="active">
-        <fa-icon [icon]="faMagnifyingGlass" class="fa-2x"></fa-icon>
-      </a>
+    <div class="icon" id="search" routerLink="catalogo" routerLinkActive="active">
+      <fa-icon [icon]="faMagnifyingGlass" class="fa-2x"></fa-icon>
     </div>
     <div class="logo_menu">
-      <a routerLink="perfil" routerLinkActive="active">
-        <img src="../../assets/logo_menu.svg" alt="Home">
-      </a>
+      <img src="../../assets/logo_menu.svg" alt="Home" routerLink="perfil">
     </div>
-    <div class="icon" id="heart">
-      <a routerLink="favoritos" routerLinkActive="active">
-        <fa-icon [icon]="faHeart" class="fa-2x"></fa-icon>
-      </a>
+    <div class="icon" id="heart" routerLink="favoritos" routerLinkActive="active">
+      <fa-icon [icon]="faHeart" class="fa-2x"></fa-icon>
     </div>
   </div>
   <div>

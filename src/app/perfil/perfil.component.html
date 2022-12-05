@@ -4,27 +4,27 @@
 </div>
 <p class="reservas">As minhas reservas</p>
 <div class="col-6">
-<app-casa
-  *ngFor="let reserva of reservas_atuais"
-  [featured_photo]="reserva.featured_photo"
-  [id]="reserva.id"
-  [country]="reserva.country"
-  [city]="reserva.city"
-  [rating]="reserva.rating"
-  [time]="reserva.time"
-  [price]="reserva.price">
-</app-casa>
+  <app-casa
+    *ngFor="let reserva of reservas_atuais"
+    [featured_photo]="reserva.featured_photo"
+    [id]="reserva.id"
+    [country]="reserva.country"
+    [city]="reserva.city"
+    [rating]="reserva.rating"
+    [time]="reserva.time"
+    [price]="reserva.price">
+  </app-casa>
 </div>
 <p class="reservas">Reservas passadas</p>
 <div class="col-6">
-<app-casa
-  *ngFor="let reserva of reservas_passadas"
-  [featured_photo]="reserva.featured_photo"
-  [id]="reserva.id"
-  [country]="reserva.country"
-  [city]="reserva.city"
-  [rating]="reserva.rating"
-  [time]="reserva.time"
-  [price]="reserva.price">
-</app-casa>
+  <app-casa
+    *ngFor="let reserva of reservas_passadas"
+    [featured_photo]="reserva.featured_photo"
+    [id]="reserva.id"
+    [country]="reserva.country"
+    [city]="reserva.city"
+    [rating]="reserva.rating"
+    [time]="reserva.time"
+    [price]="reserva.price">
+  </app-casa>
 </div>

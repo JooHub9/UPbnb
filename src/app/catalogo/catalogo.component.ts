@@ -7,42 +7,41 @@ import {ActivatedRoute} from "@angular/router";
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.scss']
+
 })
 export class CatalogoComponent implements OnInit {
   catalogo = <Catalogo>{}
   lista_casas: Casa[] = []
-  pesquisar: string[] = []
   item: string = ""
   page = 1
 
 
-  getPesquisar(e: any) {
-    const item = e.target.value;
-    return this.pesquisar.push(item)
+  getPesquisar(pesquisa: string) {
+    this.item = pesquisa
+    this.listarCasas(true);
   }
 
   faMagnifyingGlass = faMagnifyingGlass
 
   constructor(public alojamentosLuxoService: AlojamentosLuxoService, public route: ActivatedRoute) {
-    this.alojamentosLuxoService.getPesquisa(this.item).subscribe((pesquisa: any) => {
-      this.item = pesquisa
-
-    })
   }
 
   ngOnInit(): void {
-    this.alojamentosLuxoService.getCasas().subscribe((casas: any) => {
-      this.catalogo = <Catalogo>casas;
-      this.lista_casas = this.catalogo.data
-    })
+    this.listarCasas();
+  }
 
+  listarCasas(apagar: boolean = false): void {
+    this.alojamentosLuxoService.getCasas(this.page, this.item).subscribe((casas) => {
+      let resultados = <Catalogo>casas;
+      if (apagar)
+        this.lista_casas = resultados.data
+      else
+        this.lista_casas = [...this.lista_casas, ...resultados.data]
+    })
   }
 
   maisResultados(): void {
     this.page++
-    this.alojamentosLuxoService.getCasas(this.page).subscribe((casas) => {
-      let resultados = <Catalogo>casas;
-      this.lista_casas = [...this.lista_casas, ...resultados.data]
-    })
+    this.listarCasas();
   }
 }

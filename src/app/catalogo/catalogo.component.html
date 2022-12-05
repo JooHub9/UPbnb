@@ -1,19 +1,21 @@
-<div class="barra_pesquisa">
-  <input class="pesquisa" placeholder="Procurar" (change)="getPesquisar($event)">
-  <fa-icon [icon]="faMagnifyingGlass" class="fa-lg" style="color:lightgray"></fa-icon>
+<div class="top-container">
+  <div class="barra_pesquisa">
+    <input class="pesquisa" placeholder="Procurar" ngModel (ngModelChange)="getPesquisar($event)">
+    <fa-icon [icon]="faMagnifyingGlass" class="fa-lg" style="color:lightgray"></fa-icon>
+  </div>
 </div>
 <div class="col-6">
   <app-casa
     *ngFor="let casa of this.lista_casas"
     [id]="casa.id"
-    [title]="casa.title"
     [country]="casa.country"
     [city]="casa.city"
     [rating]="casa.rating"
     [price]="casa.price"
     [host_type]="casa.host_type"
     [featured_photo]="casa.featured_photo">
-  </app-casa></div>
+  </app-casa>
+</div>
 <p (click)="maisResultados()">mais resultados</p>
 
 

@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .galeria {
+    > * {
+      width: 100%;
+    }
+
+    img {
+      border-radius: 10px;
+      //width: 200px;
+      padding: 5px;
+    }
+  }
+}
+
+
+

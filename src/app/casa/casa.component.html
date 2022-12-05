@@ -1,18 +1,27 @@
-<div class="container">
-  <app-imagem
-    [featured_photo]="featured_photo"
-    [id]="id"
-  ></app-imagem>
-    <div class="info_casa" [routerLink]="['/detalhes',id]">
-      <h4 class="localizacao">{{city}}, {{country}}</h4>
-      <div class="rating">
-        <fa-icon [icon]="faStar"></fa-icon>
-        {{rating}}
+<div class="container" [ngClass]="type">
+  <h1 class="titulo" *ngIf="title">{{title | titlecase}}</h1>
+  <div class="imagens" (click)="alojamentosLuxoService.toggleFavorito(id)">
+    <div class="imagem_casa" style="background-image: url({{featured_photo}})" alt="foto casa"></div>
+    <img class="fav" *ngIf="alojamentosLuxoService.isFavorite(id)" src="assets/heart_full.svg" alt="icone favoritos">
+    <img class="fav" *ngIf="!alojamentosLuxoService.isFavorite(id)" src="assets/heart_open.svg" alt="icone favoritos">
+  </div>
+  <div class="container_texto" [routerLink]="['/detalhes',id]">
+    <div class="main_info">
+      <div class="info_casa">
+        <h4 class="localizacao">{{city}}</h4>
+        <h4 class="localizacao" *ngIf="country">, {{country}}</h4>
+      </div>
+      <div class="anfitriao" *ngIf="host_type">Anfitrião {{host_type}}</div>
+      <div class="data" *ngIf="time">{{time}}</div>
+      <div class="preco" *ngIf="price" ><strong>{{price}}€</strong> noite</div>
+      <div class="descricao"> {{description}}
       </div>
     </div>
-  <div class="anfitriao" *ngIf="host_type">Anfitrião {{host_type}}</div>
-  <div class="data" *ngIf="time">{{time}}</div>
-  <div class="preco"><strong>{{ price}}€</strong> noite</div>
-
+    <div class="rating">
+      <div>
+        <fa-icon [icon]="faStar"></fa-icon>
+      </div>
+      <div>{{rating}}</div>
+    </div>
+  </div>
 </div>
-

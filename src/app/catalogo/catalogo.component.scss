@@ -1,36 +1,32 @@
-.barra_pesquisa {
-  padding: 5px 10px;
-  border: 1px solid black;
-  width: 95%;
-  border-radius: 5px;
+.top-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  .pesquisa {
-    border: none;
-    width: 90%;
-    padding-right: 10px;
-    font-size: 22px;
-    color: lightgray;
+  .barra_pesquisa {
+    padding: 5px 10px;
+    border: 1px solid black;
+    max-width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .pesquisa {
+      border: none;
+      width: 100%;
+      padding-right: 10px;
+      font-size: 22px;
+      color: lightgray;
+    }
   }
 }
 
 .col-6 {
-  display: grid;
-  margin: 0 auto;
-  justify-items: center;
-}
+  display: flex;
+  flex-wrap: wrap;
 
-@media (min-width: 768px) {
-  .col-6 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 100px) {
-  .col-6 {
-    grid-template-columns: repeat(2, 1fr);
+  > * {
+    width: 50%;
   }
 }
 

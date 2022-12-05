@@ -1,4 +1,4 @@
-.info_anfitriao {
+.info_comentario {
   display: flex;
 
   img {
@@ -16,7 +16,11 @@
     padding-left: 20px;
     height: 10px;
 
+    .data {
+      font-size: 14px;
+      color: grey;
+
+    }
+
   }
-
 }
-

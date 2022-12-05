@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -8,14 +8,15 @@ import {faStar} from "@fortawesome/free-solid-svg-icons";
 })
 export class AnfitriaoComponent implements OnInit {
 
-  @Input() name! : string;
-  @Input() photo! : string;
-  @Input() type! : string;
-  @Input()rating!: number;
+  @Input() name!: string;
+  @Input() photo!: string;
+  @Input() type!: string;
+  @Input() rating!: number;
 
-  faStar=faStar
+  faStar = faStar
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AlojamentosLuxoService} from "../alojamentos-luxo.service";
 import {ActivatedRoute} from "@angular/router";
 import {faStar,} from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,8 @@ export class DetalhesComponent implements OnInit {
   id: number
   faStar = faStar
   anfitriao!: Anfitriao
-  galeria!: []
+  galeria!: string[]
+  comentarios!: Comentador[];
 
 
   constructor(public route: ActivatedRoute, public alojamentoLuxoService: AlojamentosLuxoService) {
@@ -25,12 +26,17 @@ export class DetalhesComponent implements OnInit {
       this.detalhes = detalhes;
     })
 
-    this.alojamentoLuxoService.getAnfitriao(this.id).subscribe((anfitriao: any) => {
+    this.alojamentoLuxoService.getAnfitriao(this.id).subscribe((anfitriao) => {
       this.anfitriao = anfitriao;
     })
 
-    this.alojamentoLuxoService.getGaleria(this.id).subscribe((lista_fotos: any) => {
-      this.galeria= lista_fotos.photos;
+    this.alojamentoLuxoService.getGaleria(this.id).subscribe((lista_fotos) => {
+      this.galeria = lista_fotos.photos;
     })
+
+    this.alojamentoLuxoService.getComentarios(this.id).subscribe((lista_comentarios) => {
+      this.comentarios = lista_comentarios.reviews;
+    })
+
   }
 }

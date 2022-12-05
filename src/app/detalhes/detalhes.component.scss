@@ -1,25 +1,26 @@
-.container_casa{
-max-width: 100%;
+.container_casa {
+  max-width: 100%;
 
+  .info_casa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 22px;
+    height: 40px;
+    padding-bottom: 20px;
+  }
 
-.titulo {
-  margin: 0;
-  font-size: 40px;
-  padding-bottom: 10px;
-}
-
-.info_casa {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 22px;
-  height: 40px;
-  padding-bottom: 20px ;
-
-  //perguntar como aplicar padding dos filhos
-}
-  .imagem_casa{
+  .imagem_casa {
     max-width: 500px;
     border-radius: 10px;
+  }
+}
+
+#galeria-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  app-galeria {
+    width: 49%;
   }
 }

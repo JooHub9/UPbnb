@@ -1,25 +1,44 @@
-<h1 *ngIf="!detalhes">A carregar...</h1>
-<div *ngIf="detalhes">
-  <div class="container_casa">
-    <h1 class="titulo">{{detalhes.title | titlecase}}</h1>
-    <div class="info_casa">
-        <fa-icon [icon]="faStar"></fa-icon>
-        {{detalhes.rating}} <p class="localizacao">{{detalhes.city}}, {{detalhes.country}}</p>
-      </div>
-      <img class="imagem_casa" src="{{detalhes.featured_photo}}" alt="foto_casa">
-    </div>
-    <div class="preco">{{detalhes.price}} noite</div>
-    <div class="descricao"> {{detalhes.description}}
-    </div>
-  </div>
-<div class="regras"></div>
+<app-casa
+  *ngIf="detalhes"
+  [id]="detalhes.id"
+  [title]="detalhes.title"
+  [featured_photo]="detalhes.featured_photo"
+  [country]="detalhes.country"
+  [city]="detalhes.city"
+  [rating]="detalhes.rating"
+  [price]="detalhes.price"
+  [description]="detalhes.description">
+</app-casa>
+
+<app-regras></app-regras>
+
+<p><strong>Sobre o anfitrião</strong></p>
 
 <app-anfitriao
+  *ngIf="anfitriao"
   [name]="anfitriao.name"
   [photo]="anfitriao.photo"
   [type]="anfitriao.type"
   [rating]="anfitriao.rating">
 </app-anfitriao>
-<!--<app-galeria *ngFor="let src this galeria"
- [src]="galeria.photos">
-</app-galeria>-->
+
+<p><strong>Galeria</strong></p>
+<div id="galeria-wrapper">
+  <app-galeria *ngFor="let foto of this.galeria"
+               [photos]="foto">
+  </app-galeria>
+
+</div>
+
+<h4>Comentários</h4>
+<div *ngIf="comentarios">
+  <app-comentario
+    *ngFor="let comentario of comentarios"
+    [name]="comentario.name"
+    [photo]="comentario.photo"
+    [date]="comentario.date"
+    [comment]="comentario.comment">
+  </app-comentario>
+</div>
+
+

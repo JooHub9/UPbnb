@@ -11,42 +11,51 @@ export class AlojamentosLuxoService {
   constructor(private http: HttpClient) {
   }
 
-  getCasas(page?: number) {
+  getCasas(page?: number, filtro?: string) {
     let url = API_BASE + "/casas"
     if (page) {
       url = url + "?page=" + page
     }
-      return this.http.get(url);
+    if (filtro) {
+      url = url + "&search=" + filtro
     }
+
+    return this.http.get(url);
+  }
 
   getDetalhes(id: number) {
     return this.http.get<Casa>(API_BASE + "/casas/" + id);
   }
 
-  getPesquisa(item: string) {
-    return this.http.get(API_BASE + "/casas/?search=" + item);
-  }
 
   getReservasAtuais() {
-    return this.http.get(API_BASE + "/casas/current");
+    return this.http.get<Catalogo>(API_BASE + "/casas/current");
   }
 
   getReservasPassadas() {
-    return this.http.get(API_BASE + "/casas/past");
+    return this.http.get<Catalogo>(API_BASE + "/casas/past");
   }
 
   getAnfitriao(id: number) {
-    return this.http.get(API_BASE + "/casas/" + id + "/host")
+    return this.http.get<Anfitriao>(API_BASE + "/casas/" + id + "/host")
   }
 
   getGaleria(id: number) {
-    return this.http.get(API_BASE + "/casas/" + id + "/photos")
+    return this.http.get<GaleriaAPI>(API_BASE + "/casas/" + id + "/photos")
+  }
 
+  getRegras(id: number) {
+    return this.http.get<ComodidadesAPI>(API_BASE + "/casas/" + id + "/features")
+  }
+
+  getComentarios(id: number) {
+    return this.http.get<Comentarios>(API_BASE + "/casas/" + id + "/reviews")
   }
 
   getFavoritas() {
-    return this.http.get(API_BASE + "/casas/?ids=" + this.favoritos.join(","));
+    return this.http.get<Catalogo>(API_BASE + "/casas/?ids=" + this.favoritos.join(","));
   }
+
 
   favoritos: number[] = JSON.parse(localStorage.getItem("favoritos") || "[]");
 

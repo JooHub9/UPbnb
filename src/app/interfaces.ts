@@ -8,25 +8,41 @@ interface Catalogo {
 }
 
 interface Casa {
-  id : number,
-  title?: string,
+  id: number,
+  title: string,
   country: string,
   city: string,
   rating: number,
   price: number,
   host_type?: string,
-  featured_photo: string
-  description?: string
+  featured_photo: string,
+  description?: string,
   time?: string
 }
 
-interface Anfitriao {
+interface Pessoa {
   name: string,
-  photo: string,
+  photo: string
+}
+
+interface Anfitriao extends Pessoa {
   type: string,
   rating: number
 }
 
-interface Galeria {
+interface Comentador extends Pessoa {
+  date: string,
+  comment: string
+}
+
+interface Comentarios {
+  reviews: Comentador[]
+}
+
+interface ComodidadesAPI {
+  features: string[]
+}
+
+interface GaleriaAPI {
   photos: string[]
 }

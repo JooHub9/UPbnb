@@ -1,1 +1,16 @@
-<p>regras works!</p>
+<div class="icones">
+  <div class="permitidos">
+    <div *ngFor="let icon of Object.keys(regrasTodas) " class="icon">
+      <div *ngIf="regras.includes(icon)" class="allow">
+        <img [src]="regrasTodas[icon]" alt="icon">
+      </div>
+    </div>
+  </div>
+  <div class="nao_permitidos">
+    <div *ngFor="let icon of Object.keys(regrasTodas) " class="icon">
+      <div *ngIf="!regras.includes(icon)" class="not_allow">
+        <img [src]="regrasTodas[icon]" alt="icon">
+      </div>
+    </div>
+  </div>
+</div>

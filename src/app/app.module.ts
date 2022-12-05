@@ -18,10 +18,8 @@ import { ImagemComponent } from './imagem/imagem.component';
 import { RegrasComponent } from './regras/regras.component';
 import { AnfitriaoComponent } from './anfitriao/anfitriao.component';
 import { GaleriaComponent } from './galeria/galeria.component';
-
-
-
-
+import {FormsModule} from "@angular/forms";
+import { ComentarioComponent } from './comentario/comentario.component';
 
 
 
@@ -39,6 +37,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
     RegrasComponent,
     AnfitriaoComponent,
     GaleriaComponent,
+    ComentarioComponent,
 
 
   ],
@@ -49,8 +48,9 @@ import { GaleriaComponent } from './galeria/galeria.component';
     HttpClientModule,
     RouterLink,
     CommonModule,
+    FormsModule,
 
-   ],
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-pt' }],
   bootstrap: [AppComponent]
 })

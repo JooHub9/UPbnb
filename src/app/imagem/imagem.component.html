@@ -1,5 +1,5 @@
 <div class="imagens" (click)="alojamentosLuxoService.toggleFavorito(id)">
-  <img class="imagem_casa" src="{{featured_photo}}" [style.background-image]="featured_photo" alt="foto casa">
+  <div class="imagem_casa" style="background-image: url({{featured_photo}})" alt="foto casa"></div>
   <img class="fav" *ngIf="alojamentosLuxoService.isFavorite(id)" src="assets/heart_full.svg" alt="icone favoritos">
   <img class="fav" *ngIf="!alojamentosLuxoService.isFavorite(id)" src="assets/heart_open.svg" alt="icone favoritos">
 </div>
